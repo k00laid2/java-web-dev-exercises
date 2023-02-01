@@ -1,4 +1,4 @@
-package exercises;
+package exercises.datatypes;
 
 
 import javax.sound.midi.SysexMessage;
