@@ -17,6 +17,9 @@ public class Student {
         this.gpa = gpa;
     }
 
+    public void printId(){
+        System.out.println(studentId);
+    }
 
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}

@@ -5,9 +5,7 @@ public class SchoolPractice {
         // Instantiate your Student class for part 2 here!
 
 //        Student newStudent = new Student(name, studentId, numberOfCredits, gpa);
-        Student newStudent = new Student("Andrew", 123, 1, 4.0);
-
-
-
+        Student andrew = new Student("Andrew", 123, 1, 4.0);
+        andrew.printId();
     }
 }
