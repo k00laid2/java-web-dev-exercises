@@ -17,7 +17,7 @@ public class CountingCharacters {
 
         Scanner input;
         input = new Scanner(System.in);
-        System.out.println("Enter the search term: ");
+        System.out.println("Enter your own string here: ");
         String userString = input.nextLine();
         char[] splitUserString = userString.toCharArray();
         input.close();
