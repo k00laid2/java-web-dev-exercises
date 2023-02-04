@@ -7,6 +7,7 @@ public class Student {
     private int studentId;
     private int numberOfCredits = 0;
     private double gpa = 0.0;
+    private double totalQualityScore;
 
     public Student (String name, int studentId, int numberOfCredits, double gpa) {
         this.name = name;
@@ -30,20 +31,67 @@ public class Student {
 
 
      //TODO: Uncomment and complete the getGradeLevel method here:
-//    public String getGradeLevel() {
-//        // Determine the grade level of the student based on numberOfCredits
-//    }
+    public String getGradeLevel() {
+        // Determine the grade level of the student based on numberOfCredits
+        if(this.numberOfCredits < 30) {
+            return "Freshman";
+        }else if(this.numberOfCredits <= 59){
+            return "Sophomore";
+        }else if(this.numberOfCredits <= 89) {
+            return "Junior";
+        }else if(this.numberOfCredits > 90){
+            return "Senior";
+        } else {
+            return "woa bro, invalid inputs ya know?";
+        }
+    }
+
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
         // Update the appropriate fields: numberOfCredits, gpa
+        this.numberOfCredits = this.numberOfCredits + courseCredits;
+        // the gpa calculation doesn't mean anything to me... but lets try to do what the book says...
+        double qualityScore = grade * courseCredits;
+        this.totalQualityScore = this.totalQualityScore + qualityScore;
+        this.gpa = this.totalQualityScore / this.numberOfCredits;
     }
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
     //  than just the class fields.
 
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", numberOfCredits=" + numberOfCredits +
+                ", gpa=" + gpa +
+                '}';
+    }
+
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student student)) return false;
+
+        if (studentId != student.studentId) return false;
+        if (numberOfCredits != student.numberOfCredits) return false;
+        return Double.compare(student.gpa, gpa) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = studentId;
+        result = 31 * result + numberOfCredits;
+        temp = Double.doubleToLongBits(gpa);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
 
     public String getName() {
         return name;
