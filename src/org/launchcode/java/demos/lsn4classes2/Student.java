@@ -72,15 +72,15 @@ public class Student {
 
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Student student)) return false;
-
-        if (studentId != student.studentId) return false;
-        if (numberOfCredits != student.numberOfCredits) return false;
-        return Double.compare(student.gpa, gpa) == 0;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof Student student)) return false;
+//
+//        if (studentId != student.studentId) return false;
+//        if (numberOfCredits != student.numberOfCredits) return false;
+//        return Double.compare(student.gpa, gpa) == 0;
+//    }
 
     @Override
     public int hashCode() {
