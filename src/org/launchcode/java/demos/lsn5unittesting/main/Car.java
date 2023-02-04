@@ -1,6 +1,8 @@
 package org.launchcode.java.demos.lsn5unittesting.main;
 
 public class Car {
+    // im skipping unit testing
+    
 
     private String make;
     private String model;
