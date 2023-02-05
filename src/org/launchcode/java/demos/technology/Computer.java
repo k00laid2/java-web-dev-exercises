@@ -30,4 +30,14 @@ public class Computer extends AbstractEntity {
         this.storage = storage;
         this.hasKeyboard = hasKeyboard;
     }
+
+    // again i dont really understand where they asked for all these random methods, but whatever
+    public void increaseRAM(int n){
+        this.ram = this.ram+n;
+    }
+
+    public void increaseStorage(int n){
+        this.storage = this.storage+n;
+    }
+
 }
