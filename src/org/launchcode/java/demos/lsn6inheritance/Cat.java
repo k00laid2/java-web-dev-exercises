@@ -1,6 +1,6 @@
 package org.launchcode.java.demos.lsn6inheritance;
 
-public class Cat {
+public abstract class Cat {
 
     private boolean tired = false;
     private boolean hungry = false;
@@ -11,6 +11,10 @@ public class Cat {
 
     public Cat (double aWeight) {
         weight = aWeight;
+    }
+
+    public Cat () {
+        weight = 13;
     }
 
     /**** Getters and Setters ****/
@@ -57,9 +61,11 @@ public class Cat {
         // eating when not hungry makes a cat sleepy
         if (!hungry) {
             tired = true;
+            System.out.println("TESTING WTF");
         }
 
         hungry = false;
+//        System.out.println("TESTING WTFFFFFFFF");
     }
 
     public String noise () {

@@ -8,6 +8,16 @@ public class HouseCat extends Cat {
         super(aWeight);
         name = aName;
     }
+    // a useless constructor, because we NEED a name. zero point in having this one
+//    public HouseCat(double aWeight) {
+//        super(aWeight);
+//    }
+    // but this one, with a name, apparently also uses the base constructor from 'Cat', which gives
+    // us the default weight of 13 that we put in.
+    public HouseCat(String aName) {
+        name = aName;
+    }
+
 
     public boolean isSatisfied() {
         return !isHungry() && !isTired();
@@ -15,7 +25,11 @@ public class HouseCat extends Cat {
 
     @Override
     public String noise() {
-        return "Hello, my name is " + name + "!";
+        if (isSatisfied()) {
+            return "Hello, my name is " + name + "!";
+        } else {
+            return super.noise(); // prints "Meeeeeeooooowww!"
+        }
     }
 
     public String purr() {
